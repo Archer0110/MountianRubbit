@@ -64,11 +64,11 @@ public class MainPresenter implements IMainPresenter{
         RacreationFragment rtf = new RacreationFragment();
         RecommendFragment rmf = new RecommendFragment();
         fragmentsList.add(af);
-        fragmentsList.add(cf);
-        fragmentsList.add(df);
-        fragmentsList.add(ef);
-        fragmentsList.add(rtf);
         fragmentsList.add(rmf);
+        fragmentsList.add(df);
+        fragmentsList.add(rtf);
+        fragmentsList.add(ef);
+        fragmentsList.add(cf);
         //调用tabLayout的适配器
         TabLayoutAdapter adapter = new TabLayoutAdapter(mIMainActivityView.getFragmentsManager(),fragmentsList,arrTabTitles);
         mViewPager.setAdapter(adapter);

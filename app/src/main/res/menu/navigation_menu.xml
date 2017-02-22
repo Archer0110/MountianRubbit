@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/g1">
+        <item
+            android:id="@+id/history_draw"
+            android:icon="@drawable/history"
+            android:title="历史纪录" />
+        <item
+            android:id="@+id/download_draw"
+            android:icon="@drawable/download"
+            android:title="离线缓存" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/g2">
+        <item
+            android:id="@+id/fans"
+            android:icon="@drawable/fans"
+            android:title="关注和粉丝" />
+        <item
+            android:id="@+id/collect"
+            android:icon="@drawable/collect"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/contribute"
+            android:icon="@drawable/contribute"
+            android:title="我的投稿" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/g3">
+        <item
+            android:id="@+id/set"
+            android:icon="@drawable/set"
+            android:title="设置" />
+        <item
+            android:id="@+id/game_draw"
+            android:icon="@drawable/game"
+            android:title="游戏中心" />
+        <item
+            android:id="@+id/idea"
+            android:icon="@drawable/idea"
+            android:title="意见反馈" />
+    </group>
+
+
+
+</menu>

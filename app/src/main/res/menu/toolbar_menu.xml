@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/game_menu"
+        android:orderInCategory="100"
+        android:title="@string/game"
+        app:showAsAction="always"
+        android:icon="@drawable/game"
+        />
+
+    <item
+        android:id="@+id/download_menu"
+        android:orderInCategory="100"
+        android:title="@string/download"
+        app:showAsAction="always"
+        android:icon="@drawable/download"/>
+
+    <item
+        android:id="@+id/history_menu"
+        android:orderInCategory="100"
+        android:title="@string/history"
+        app:showAsAction="always"
+        android:icon="@drawable/history"
+        />
+
+    <item
+        android:id="@+id/search_menu"
+        android:orderInCategory="100"
+        android:title="@string/search"
+        app:showAsAction="always"
+        android:icon="@drawable/search"/>
+</menu>

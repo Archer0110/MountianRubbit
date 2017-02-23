@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentManager;
  */
 
 public interface IMainActivityView {
-    //关闭页面
-    public void closeActivity();
     //获取碎片资源管理器
     public FragmentManager getFragmentsManager();
 }

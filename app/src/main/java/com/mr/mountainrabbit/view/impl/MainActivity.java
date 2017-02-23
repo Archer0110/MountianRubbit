@@ -23,7 +23,6 @@ import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.mr.mountainrabbit.R;
-import com.mr.mountainrabbit.bean.UserInfo;
 import com.mr.mountainrabbit.bean.Util;
 import com.mr.mountainrabbit.presenter.IMainPresenter;
 import com.mr.mountainrabbit.presenter.impl.MainPresenter;
@@ -61,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
     private ImageView banana_yellow;
     private ImageView banana_orange;
     private CircleImageView roundIcon;
+    private ImageView open_draw;
 
 
     @Override
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
     private void findView() {
         //菜单栏上的头像图片
         roundIcon = (CircleImageView) findViewById(R.id.roundIcon);
-
+        open_draw = (ImageView) findViewById(R.id.open_draw);
 
         View view = nv_draw.inflateHeaderView(R.layout.nv_head_draw);
         //用户姓名文本框
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
         //去掉标题栏
         toolbar.setTitle("");
         //用户头像设置
-        mIMainPresenter.setRoundImageIcon(roundIcon,Util.iconPath);
+        mIMainPresenter.isIconToolBar(roundIcon);
         //设置当前Activity支持ToolBar
         setSupportActionBar(toolbar);
         //调用方法设置适配器
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
         params.width = getResources().getDisplayMetrics().widthPixels/4*3;
         nv_draw.setLayoutParams(params);
         //设置侧滑头部的隐藏与显
-        mIMainPresenter.LoginInOrOut(UserInfo.getIsLogin(),user_name,system_member,user_message,icon_draw,resign_draw,sign_login_draw,banana_yellow,banana_orange);
+        mIMainPresenter.LoginInOrOut(user_name,system_member,user_message,icon_draw,resign_draw,sign_login_draw,banana_yellow,banana_orange);
     }
 
     /**
@@ -139,6 +139,11 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
         roundIcon.setOnClickListener(mHeadClick);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 
     /**
      * 加载菜单
@@ -173,14 +178,6 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
 
         }
         return true;
-    }
-
-    /**
-     * 关闭页面
-     */
-    @Override
-    public void closeActivity() {
-        finish();
     }
 
     /**
@@ -253,6 +250,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
                     break;
 
                 case R.id.roundIcon://点击展开抽屉
+                    drawLayout.openDrawer(GravityCompat.START);
+                    break;
+                case R.id.open_draw://点击旁边3个点打开抽屉
                     drawLayout.openDrawer(GravityCompat.START);
                     break;
             }

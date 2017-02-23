@@ -2,6 +2,7 @@ package com.mr.mountainrabbit.presenter.impl;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -9,10 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.lidroid.xutils.BitmapUtils;
 import com.mr.mountainrabbit.R;
 import com.mr.mountainrabbit.adapter.TabLayoutAdapter;
-import com.mr.mountainrabbit.bean.UserInfo;
 import com.mr.mountainrabbit.bean.Util;
 import com.mr.mountainrabbit.dao.IUserDao;
 import com.mr.mountainrabbit.dao.impl.UserDao;
@@ -81,14 +80,17 @@ public class MainPresenter implements IMainPresenter{
      */
     @Override
     public void JumpTOLogin() {
+        SharedPreferences share = context.getSharedPreferences(Util.MR, Context.MODE_PRIVATE);
+        int result = share.getInt("result", 0);
+        if(result == 1){
+            return;
+        }
         Intent intent = new Intent(context, LoginActivity.class);
         context.startActivity(intent);
-        mIMainActivityView.closeActivity();
     }
 
     /**
      * 根据登录成功或者失败的信息显示头部布局的控件的显示与隐藏
-     * @param islogin:是否登录成功
      * @param user_name:用户的昵称
      * @param system_member：是否为会员
      * @param user_message：用户消息
@@ -99,40 +101,35 @@ public class MainPresenter implements IMainPresenter{
      * @param banana_orange：香蕉等级
      */
     @Override
-    public void LoginInOrOut(Boolean islogin, TextView user_name, TextView system_member,
+    public void LoginInOrOut(TextView user_name, TextView system_member,
                              ImageView user_message, final CircleImageView icon_draw,
                              LinearLayout resign_draw, LinearLayout sign_login_draw,
                              ImageView banana_yellow, ImageView banana_orange) {
-        if(islogin != null){//如果这个标记不为空
-            if(islogin){//如果登录成功
-                user_name.setText(UserInfo.getUser_name());
-                system_member.setText(UserInfo.getSystem_member());
-                //用户头像设置
-                setRoundImageIcon(icon_draw,"");
-
-                user_message.setVisibility(View.VISIBLE);
-                resign_draw.setVisibility(View.GONE);
-                sign_login_draw.setVisibility(View.VISIBLE);
-                banana_yellow.setVisibility(View.VISIBLE);
-                banana_orange.setVisibility(View.VISIBLE);
-            }else{//登录不成功
-                user_message.setVisibility(View.GONE);
-                resign_draw.setVisibility(View.VISIBLE);
-                sign_login_draw.setVisibility(View.GONE);
-                banana_yellow.setVisibility(View.GONE);
-                banana_orange.setVisibility(View.GONE);
-                //用户头像设置
-                setRoundImageIcon(icon_draw, Util.iconPath);
-            }
-        }else{//这个标记为空了
-            user_message.setVisibility(View.GONE);
-            resign_draw.setVisibility(View.VISIBLE);
-            sign_login_draw.setVisibility(View.GONE);
-            banana_yellow.setVisibility(View.GONE);
-            banana_orange.setVisibility(View.GONE);
+        SharedPreferences share = context.getSharedPreferences(Util.MR, Context.MODE_PRIVATE);
+        int result = share.getInt("result", 0);
+        String portrait = share.getString("portrait", null);
+        String nickname = share.getString("nickname", "立即登录");
+        if(result == 1){//表示登录成功
             //用户头像设置
-            setRoundImageIcon(icon_draw, Util.iconPath);
+            setRoundImageIcon(icon_draw,Util.ICONPICTURE+portrait);
+            user_name.setText(nickname);
+            system_member.setText("黄金会员");
+            user_message.setVisibility(View.VISIBLE);
+            resign_draw.setVisibility(View.GONE);
+            sign_login_draw.setVisibility(View.VISIBLE);
+            banana_yellow.setVisibility(View.VISIBLE);
+            banana_orange.setVisibility(View.VISIBLE);
+
+            return;
         }
+
+        user_message.setVisibility(View.GONE);
+        resign_draw.setVisibility(View.VISIBLE);
+        sign_login_draw.setVisibility(View.GONE);
+        banana_yellow.setVisibility(View.GONE);
+        banana_orange.setVisibility(View.GONE);
+        //用户头像设置
+        setRoundImageIcon(icon_draw, Util.ICONPATH);
     }
 
     /**
@@ -145,6 +142,19 @@ public class MainPresenter implements IMainPresenter{
         mIUserDao.getIcon(imageIcon,uri,context);
     }
 
-
-
+    /**
+     * toolbar上的头像展示
+     * @param roundIcon
+     */
+    @Override
+    public void isIconToolBar(CircleImageView roundIcon) {
+        SharedPreferences share = context.getSharedPreferences(Util.MR, Context.MODE_PRIVATE);
+        int result = share.getInt("result", 0);
+        String portrait = share.getString("portrait", null);
+        if(result == 1){
+            setRoundImageIcon(roundIcon,Util.ICONPICTURE+portrait);
+            return;
+        }
+        setRoundImageIcon(roundIcon, Util.ICONPATH);
+    }
 }

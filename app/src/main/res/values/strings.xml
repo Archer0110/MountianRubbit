@@ -8,6 +8,26 @@
     <string name="history">历史</string>
     <string name="search">查找</string>
 
+    <!-- 以下为番剧页面所需名称-->
+    <string name="cartoon_new">新番连载</string>
+    <string name="cartoon_old">旧番补档</string>
+    <string name="cartoon_china">国产动画</string>
+    <string name="cartoon_message">动画咨讯</string>
+
+    <!-- 以下为娱乐页面需要的名称 -->
+    <string name="raceation_life">生活娱乐</string>
+    <string name="raceation_repit">鬼畜调教</string>
+    <string name="raceation_annimal">萌宠</string>
+    <string name="raceation_food">美食</string>
+    <string name="raceation_all">综艺</string>
+
+    <string name="raceation_hot">本区最热</string>
+    <string name="raceation_happy">来呀～快活啊</string>
+    <string name="raceation_famous">UP名人堂</string>
+    <string name="raceation_new">最新投稿</string>
+
+
+
     <array name="arrTabTitles">
         <item>关注</item>
         <item>推荐</item>

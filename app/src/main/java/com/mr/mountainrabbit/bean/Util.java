@@ -21,4 +21,10 @@ public class Util {
 
     //共享参数要使用的文件名称
     public static final String MR = "MountainRabbitUserInFo";
+
+    public static final String iconPath = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1841987292,1358375699&fm=23&gp=0.jpg";
+
+    //番剧页面接口
+    public static final String DramaPath = "http://api.aixifan.com/regions?belong=11&loadCount=-1&channelId=155";
+
 }

@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.mr.mountainrabbit.R;
-import com.mr.mountainrabbit.adapter.Drama;
 import com.mr.mountainrabbit.adapter.DramaFirst;
 import com.mr.mountainrabbit.adapter.DramaSecond;
 import com.mr.mountainrabbit.presenter.IDramaPresenter;

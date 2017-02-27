@@ -37,7 +37,7 @@ public class RecommendPersenter {
     private Context contex;
     private RecyclerView mRecyclerView;
     private List<Ad> AdData = new ArrayList<>();//广告的资源
-    private List<RecommedOther> MonkeyHeadData = new ArrayList<>();//猴山头条的资源
+    private List<RecommedOther> MonkeyHeadData ;//猴山头条的资源
     private List<RecommendAnime> animeData = new ArrayList<>();//番剧的资源
     private List<RecommedOther> cartoonData = new ArrayList<>();//动画的资源
     private List<RecommedOther> RecreationData = new ArrayList<>();//娱乐的资源
@@ -270,7 +270,33 @@ public class RecommendPersenter {
 
     //获取猴山头条的数据
     private void getMonkeyHead(JSONObject obj) {
-       pullOtherData(MonkeyHeadData,obj);
+        MonkeyHeadData=new ArrayList<>();
+        try {
+            String iconUrl = obj.getString("image");
+            JSONArray arr = obj.getJSONArray("contents");
+            for (int i = 0; i < arr.length(); i++) {
+                JSONObject dataObj = arr.getJSONObject(i);
+                RecommedOther other = new RecommedOther();
+                other.setIconUrl(iconUrl);
+                other.setId(dataObj.getInt("id"));
+                other.setImage(dataObj.getString("image"));
+                other.setTitle(dataObj.getString("title"));
+                other.setUrl(dataObj.getString("url"));
+                try {
+                    JSONObject info = dataObj.getJSONObject("visit");
+                other.setDanmakuSize(info.getInt("danmakuSize"));
+                other.setViews(info.getInt("views"));
+                }catch (Exception e){
+                    other.setDanmakuSize(100);
+                    other.setViews(1078);
+                }
+
+                MonkeyHeadData.add(other);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
     //获得广告轮播的数据

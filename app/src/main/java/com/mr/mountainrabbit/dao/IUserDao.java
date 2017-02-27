@@ -1,6 +1,7 @@
 package com.mr.mountainrabbit.dao;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.lidroid.xutils.BitmapUtils;
 
@@ -27,4 +28,10 @@ public interface IUserDao {
      */
     public void getHttpData(RequestParams params,String url, RequestCallBack<String> callBack);
 
+
+    public  void getRecommendData(String deviceType , String productId , RequestCallBack<String> callBack);
+
+    public void  getData(RequestParams params,RequestCallBack<String> callBack);
+
+    public void downLoadImg(String url, ImageView imageView, Context context );
 }

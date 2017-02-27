@@ -24,4 +24,8 @@ public interface IMainPresenter {
     public void setRoundImageIcon(CircleImageView imageIcon,String uri);
     //判断toolbar上面的图片展示
     public void isIconToolBar(CircleImageView roundIcon);
+    //跳转到搜索页面
+    public void jumpToSearch();
+    //跳转到设置页面
+    public void jumpToSet();
 }

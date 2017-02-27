@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
 
                 break;
             case R.id.search_menu://点击了搜索
-
+                mIMainPresenter.jumpToSearch();
                 break;
 
         }
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivityView
 
                     break;
                 case R.id.set://点击了设置
-
+                    mIMainPresenter.jumpToSet();
                     break;
                 case R.id.game_draw://点击了游戏中心
 

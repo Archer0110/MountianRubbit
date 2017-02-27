@@ -24,6 +24,9 @@ import com.mr.mountainrabbit.fragment.RecommendFragment;
 import com.mr.mountainrabbit.presenter.IMainPresenter;
 import com.mr.mountainrabbit.view.IMainActivityView;
 import com.mr.mountainrabbit.view.impl.LoginActivity;
+import com.mr.mountainrabbit.view.impl.SearchActivity;
+import com.mr.mountainrabbit.view.impl.SetActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -156,5 +159,23 @@ public class MainPresenter implements IMainPresenter{
             return;
         }
         setRoundImageIcon(roundIcon, Util.ICONPATH);
+    }
+
+    /**
+     * 跳转到搜索页面
+     */
+    @Override
+    public void jumpToSearch() {
+        Intent intent = new Intent(context, SearchActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到设置页面
+     */
+    @Override
+    public void jumpToSet() {
+        Intent intent = new Intent(context, SetActivity.class);
+        context.startActivity(intent);
     }
 }

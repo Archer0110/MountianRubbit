@@ -19,6 +19,10 @@ public class Util {
     public static final String ICONPICTURE =basePath + "/Uploads/portrait/";
 
 
+    //搜索页面热搜的接口
+    public static final String SearchHotPath = "http://api.aixifan.com/hotwords";
+
+
     //共享参数要使用的文件名称
     public static final String MR = "MountainRabbitUserInFo";
 }

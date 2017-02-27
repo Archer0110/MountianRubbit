@@ -7,6 +7,10 @@ import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 import com.mr.mountainrabbit.bean.Util;
 import com.mr.mountainrabbit.dao.IUserDao;
 
@@ -38,5 +42,20 @@ public class UserDao implements IUserDao{
         httpUtils.send(HttpRequest.HttpMethod.POST, Util.LOGINPATH,params,callBack);
     }
 
+
+
+    @Override
+    public void login(String userName, String userPass, RequestCallBack<String> callBack) {
+
+    }
+
+    /**
+     * 所有网络下载所用的方法。
+     */
+    @Override
+    public void getHttpData(RequestParams params,String url, RequestCallBack<String> callBack) {
+        HttpUtils utils = new HttpUtils();
+        utils.send(HttpRequest.HttpMethod.GET,url,params,callBack);
+    }
 
 }

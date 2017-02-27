@@ -25,4 +25,15 @@ public class Util {
 
     //共享参数要使用的文件名称
     public static final String MR = "MountainRabbitUserInFo";
+
+    public static final String iconPath = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1841987292,1358375699&fm=23&gp=0.jpg";
+
+    //番剧页面接口
+    public static final String DramaPath = "http://api.aixifan.com/regions?belong=11&loadCount=-1&channelId=155";
+
+    public static final String BANANANOTICE="http://api.aixifan.com/ranks/1";//推荐页的香蕉榜
+    public static final String RecommendNotice="http://imgs.aixifan.com/cms/2016_10_27/1477538060663.png";//推荐页全站排行榜的图片地址
+    public static final String BananaNotice="http://imgs.aixifan.com/cms/2016_10_27/1477538071954.png";//推荐页的香蕉排行榜横幅
+    public static final String BannerGame="http://imgs.aixifan.com/cms/2017_02_22/1487736897818.jpg";//推荐页的游戏横幅
+    public static final String MonkeyBanner="http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201601/18100819jyhrelmf.jpg";//推荐页的猴山小卖部横幅
 }

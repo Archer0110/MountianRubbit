@@ -17,6 +17,4 @@ public interface IUserDao {
     public void getIcon(CircleImageView imageView, String uri, Context context);
     //登录
     public void login(String userName, String userPass, RequestCallBack<String> callBack);
-    //获取搜索页面的热搜
-    public void getSearchOfHot(RequestCallBack<String> callBack);
 }

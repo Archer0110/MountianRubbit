@@ -5,15 +5,16 @@
     android:orientation="vertical">
     <!-- 最上面的那种张图片-->
     <ImageView
+        android:id="@+id/drama_first_image"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:layout_margin="5dp"
         android:src="@drawable/drama_img"
         />
     <!-- 目录列表 -->
     <LinearLayout
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="101dp"
         android:orientation="vertical">
@@ -29,11 +30,13 @@
                 android:gravity="center"
                 >
                 <ImageView
+                    android:id="@+id/drama_menu_1_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@mipmap/ic_launcher"
                     />
                 <TextView
+                    android:id="@+id/drama_menu_1_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cartoon_new"
@@ -44,7 +47,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="#F5F5F5"
+                android:background="#e5e5e5"
                 />
             <LinearLayout
                 android:layout_width="0dp"
@@ -53,11 +56,13 @@
                 android:gravity="center"
                 >
                 <ImageView
+                    android:id="@+id/drama_menu_2_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@mipmap/ic_launcher"
                     />
                 <TextView
+                    android:id="@+id/drama_menu_2_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cartoon_old"
@@ -68,7 +73,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="#F5F5F5"
+                android:background="#e5e5e5"
                 />
             <LinearLayout
                 android:layout_width="0dp"
@@ -77,11 +82,13 @@
                 android:gravity="center"
                 >
                 <ImageView
+                    android:id="@+id/drama_menu_3_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@mipmap/ic_launcher"
                     />
                 <TextView
+                    android:id="@+id/drama_menu_3_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cartoon_china"
@@ -109,11 +116,13 @@
                 android:gravity="center"
                 >
                 <ImageView
+                    android:id="@+id/drama_menu_4_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@mipmap/ic_launcher"
                     />
                 <TextView
+                    android:id="@+id/drama_menu_4_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cartoon_message"
@@ -124,7 +133,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="#F5F5F5"
+                android:background="#e5e5e5"
                 />
             <LinearLayout
                 android:layout_width="0dp"
@@ -146,7 +155,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="#F5F5F5"
+                android:background="#e5e5e5"
                 />
             <LinearLayout
                 android:layout_width="0dp"
@@ -171,8 +180,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#F5F5F5"
+        android:layout_height="10dp"
+        android:background="#e5e5e5"
         />
     <!-- 新番连载-->
     <LinearLayout
@@ -183,11 +192,13 @@
         android:gravity="center"
         >
         <ImageView
+            android:id="@+id/drama_message_1_image"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/ic_launcher"
             />
         <TextView
+            android:id="@+id/drama_message_1_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cartoon_new"
@@ -200,382 +211,19 @@
             android:layout_weight="1"
             />
     </LinearLayout>
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drama_first_recycleview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
         >
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
+    </android.support.v7.widget.RecyclerView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="一月，超少年政坛什么什么呢的"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="更新至"
-                    android:layout_gravity="center"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="第六话"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#F5F5F5"
+        android:layout_height="10dp"
+        android:background="#e5e5e5"
         />
 </LinearLayout>
 

@@ -41,26 +41,45 @@
             />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/lin_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="热门搜索"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#e8e8e8"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listview_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:text="热门搜索"/>
+        >
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp">
-
-    </android.support.v7.widget.RecyclerView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:background="#e8e8e8"/>
+    </ListView>
 
 </LinearLayout>

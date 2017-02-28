@@ -1,8 +1,10 @@
 package com.mr.mountainrabbit.dao;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -17,4 +19,12 @@ public interface IUserDao {
     public void getIcon(CircleImageView imageView, String uri, Context context);
     //登录
     public void login(String userName, String userPass, RequestCallBack<String> callBack);
+    public void getSearchOfHot(RequestCallBack<String> callBack);
+    public void getHttpData(RequestParams params, String url, RequestCallBack<String> callBack);
+
+    public void getRecommendData(String deviceType, String productId, RequestCallBack<String> callBack);
+    public void getData(RequestParams params, RequestCallBack<String> callBack);
+    public void downLoadImg(String url, ImageView imageView, Context context );
+    //获取用户输入的搜索
+    public void getUserScannerData(String data,RequestCallBack<String> callBack);
 }

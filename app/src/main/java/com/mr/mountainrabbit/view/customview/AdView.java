@@ -30,13 +30,13 @@ public class AdView extends LinearLayout {
     private ViewPager pager;
     private Context context;
     private List<Ad> data;
-    private Handler handler=new Handler();
+
 
     public AdView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context=context;
         init(context);
-        handler.sendEmptyMessageAtTime(1,2000);
+
     }
     //初始化
     private void init(Context context) {
@@ -52,27 +52,36 @@ public class AdView extends LinearLayout {
     }
 
 
-   //接收消息实现广告轮询
-    Handler han=new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if(msg.what==1){
-                int currentItem=pager.getCurrentItem();
-                int nextItem=(currentItem+1)%data.size();
-                pager.setCurrentItem(nextItem);
-                handler.sendEmptyMessage(1);
-            }
-        }
-    };
 
     //对外提供一个设置数据的方法
-    public void setData(List<Ad> data,Context context){
+    public void setData(final List<Ad> data, Context context){
         this.context=context;
         this.data=data;
         MyAdapter adapter=new MyAdapter();
         pager.setAdapter(adapter);
         setIcom(0);
+        new Thread(new Runnable() {
+            Handler handler=new Handler();
+            @Override
+            public void run() {
+
+                try {
+                    while (true) {
+                        Thread.sleep(4000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                int currentItem=pager.getCurrentItem();
+                                int nextItem=(currentItem+1)%data.size();
+                                pager.setCurrentItem(nextItem);
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
 

@@ -2,26 +2,33 @@ package com.mr.mountainrabbit.view.impl;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.mr.mountainrabbit.R;
-import com.mr.mountainrabbit.dao.IUserDao;
-import com.mr.mountainrabbit.dao.impl.UserDao;
+import com.mr.mountainrabbit.bean.Util;
 import com.mr.mountainrabbit.presenter.ISearchPresenter;
 import com.mr.mountainrabbit.presenter.impl.SearchPresenter;
 import com.mr.mountainrabbit.view.ISearchActivityView;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 public class SearchActivity extends AppCompatActivity implements ISearchActivityView{
     @ViewInject(R.id.recycler_search)
@@ -30,6 +37,10 @@ public class SearchActivity extends AppCompatActivity implements ISearchActivity
     private ImageView back_main_search;
     @ViewInject(R.id.search_search)
     private SearchView search_search;
+    @ViewInject(R.id.listview_search)
+    private ListView listview_search;
+    @ViewInject(R.id.lin_search)
+    private LinearLayout lin_search;
 
     private ISearchPresenter mISearchPresenter = new SearchPresenter(this,this);
 
@@ -100,7 +111,8 @@ public class SearchActivity extends AppCompatActivity implements ISearchActivity
         //用户输入时调用的方法
         @Override
         public boolean onQueryTextChange(String newText) {
-            return false;
+            mISearchPresenter.getUserScanner(newText,listview_search,lin_search);
+            return true;
         }
     }
 

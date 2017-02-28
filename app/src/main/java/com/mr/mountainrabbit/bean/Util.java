@@ -22,6 +22,8 @@ public class Util {
     //搜索页面热搜的接口
     public static final String SearchHotPath = "http://api.aixifan.com/hotwords";
 
+    //搜索获得的数据
+    public static final String UserSearch = "http://search.app.acfun.cn/suggest?q=";
 
     //共享参数要使用的文件名称
     public static final String MR = "MountainRabbitUserInFo";

@@ -47,7 +47,7 @@ public class DramaPresenter implements IDramaPresenter {
         adapters.add(adapter2);
         LinearLayoutManager manager = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new com.mr.mountainrabbit.adapter.Drama(context,adapters));
+      //  recyclerView.setAdapter(new com.mr.mountainrabbit.adapter.Drama(context,adapters));
     }
 
     private void init() {
